@@ -133,7 +133,7 @@ for x in range(max_iterations):
         print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
         print(f"Response tokens: {response.usage_metadata.candidates_token_count}")
 
-    if response.candidates[0].content.parts[0].text != None:
+    if response.candidates[0].content.parts != None and response.candidates[0].content.parts[0].text != None:
         print(f"Model: {response.candidates[0].content.parts[0].text}")
 
         if "Task Complete" in response.candidates[0].content.parts[0].text:
